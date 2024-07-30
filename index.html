@@ -4,270 +4,204 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leetcode Buddy - Your AI Pair Programming Assistant</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        color: #333;
-      }
-      .container {
-        width: 80%;
-        margin: auto;
-        overflow: hidden;
-        padding: 20px;
-      }
-      header {
-        background: #4a90e2;
-        color: white;
-        text-align: center;
-        padding: 20px 0;
-      }
-      h1 {
-        font-size: 4em;
-      }
-      .screenshot {
-        max-width: 100%;
-        height: auto;
-        margin: 20px 0;
-      }
       .marquee {
-        background: #f4f4f4;
-        padding: 20px 0;
-        white-space: nowrap;
-        overflow: hidden;
+        display: flex;
+        animation: marquee 10s linear infinite;
       }
-      .marquee img {
-        height: 50px;
-        margin: 0 20px;
-        display: inline-block;
-      }
-      .testimonials,
-      .features {
-        padding: 40px 0;
-      }
-      .testimonial,
-      .feature {
-        margin-bottom: 20px;
-      }
-      footer {
-        background: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-      }
-      footer a {
-        color: #4a90e2;
-      }
-      .features {
-        background: #f9f9f9; /* Light background for contrast */
-        border-radius: 10px; /* Rounded corners */
-        padding: 40px 20px; /* Padding for spacing */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-      }
-      .feature {
-        background: white; /* White background for each feature */
-        border-radius: 8px; /* Rounded corners for features */
-        padding: 20px; /* Padding inside feature boxes */
-        margin: 20px 0; /* Margin between features */
-        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
-      }
-      .feature:hover {
-        transform: translateY(-5px); /* Lift effect on hover */
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-      }
-      .feature h3 {
-        color: #4a90e2; /* Consistent color for headings */
-        margin-bottom: 10px; /* Space below headings */
-      }
-      .feature p {
-        color: #666; /* Darker text for readability */
-      }
-      .tagline {
-        font-size: 2em; /* Adjust font size */
-        color: #ffffff; /* White color for contrast */
-        margin-top: 10px; /* Space above tagline */
-        font-style: italic; /* Italic style for emphasis */
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
-      }
-      .cta-button {
-        background-color: #4a90e2; /* Button background color */
-        color: white; /* Text color */
-        border: 2px solid white; /* No border */
-        padding: 10px 20px; /* Padding for button */
-        font-size: 1.4em; /* Font size */
-        border-radius: 5px; /* Rounded corners */
-        cursor: pointer; /* Pointer cursor on hover */
-        transition: background-color 0.3s; /* Smooth transition */
-      }
-      .cta-button:hover {
-        background-color: #357ab8; /* Darker shade on hover */
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
       }
     </style>
   </head>
-  <body>
-    <header>
-      <div class="container">
-        <h1>Leetcode Buddy</h1>
-        <h2 class="tagline">Your AI Pair Programming Assistant for Leetcode</h2>
+  <body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white text-center py-10">
+      <div class="container mx-auto px-4">
+        <h1 class="text-5xl font-bold">Leetcode Buddy</h1>
+        <h2 class="text-2xl italic mt-2">
+          Your AI Pair Programming Assistant for Leetcode
+        </h2>
         <img
           src="./screenshot.png"
           alt="Leetcode Buddy Screenshot"
-          class="screenshot"
+          class="max-w-full h-auto my-4"
         />
-        <button class="cta-button">Get Leetcode Buddy</button>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Get Leetcode Buddy
+        </button>
       </div>
     </header>
 
-    <div class="marquee">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
-        alt="Amazon"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-        alt="Google"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
-        alt="Facebook"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-        alt="Netflix"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Coinbase.svg"
-        alt="Coinbase"
-      />
-      <img
-        src="https://en.m.wikipedia.org/w/index.php?title=LinkedIn&diffonly=true#/media/File%3ALinkedIn_2021.svgg"
-        alt="LinkedIn"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Robinhood_logo.svg"
-        alt="Robinhood"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/5/53/Salesforce_logo.svg"
-        alt="Salesforce"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Spotify_logo.svg"
-        alt="Spotify"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Square_Inc._logo.svg"
-        alt="Square"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Stripe_Logo.svg"
-        alt="Stripe"
-      />
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/7/75/Twitch_logo.svg"
-        alt="Twitch"
-      />
+    <div class="overflow-hidden whitespace-nowrap bg-gray-200 py-4">
+      <div class="flex space-x-8 animate-marquee marquee">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+          alt="Amazon"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+          alt="Google"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/0/04/Facebook_f_logo_%282021%29.svg"
+          alt="Facebook"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Coinbase.svg"
+          alt="Coinbase"
+          class="h-12"
+        />
+        <img
+          src="https://en.m.wikipedia.org/w/index.php?title=LinkedIn&diffonly=true#/media/File%3ALinkedIn_2021.svgg"
+          alt="LinkedIn"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Robinhood_logo.svg"
+          alt="Robinhood"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Salesforce_logo.svg"
+          alt="Salesforce"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Spotify_logo.svg"
+          alt="Spotify"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Square_Inc._logo.svg"
+          alt="Square"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Stripe_Logo.svg"
+          alt="Stripe"
+          class="h-12"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/7/75/Twitch_logo.svg"
+          alt="Twitch"
+          class="h-12"
+        />
+      </div>
     </div>
 
-    <section class="testimonials">
-      <div class="container">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial">
-          <div
-            class="speech-bubble"
-            style="
-              background-color: #f0f0f0;
-              border-radius: 10px;
-              padding: 20px;
-              margin: 10px;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            "
-          >
-            <p style="font-size: 16px; color: #333; margin-bottom: 10px">
-              "Leetcode Buddy helped me ace my technical interviews. It's like
-              having a personal coding mentor."
-            </p>
-            <p style="font-size: 14px; color: #666; font-style: italic">
-              - KT, Software Engineer, MongoDB
+    <section class="py-10">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold mb-6">What Our Users Say</h2>
+        <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+          <p class="text-lg">
+            "Leetcode Buddy helped me ace my technical interviews. It's like
+            having a personal coding mentor."
+          </p>
+          <p class="text-sm italic text-gray-600">
+            - KT, Software Engineer, MongoDB
+          </p>
+        </div>
+        <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+          <p class="text-lg">
+            "The Socratic method approach really helps me understand the
+            problems deeply. Highly recommended!"
+          </p>
+          <p class="text-sm italic text-gray-600">
+            - CT, Software Engineer, Datadog
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-10 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-semibold mb-6">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-blue-600">
+              AI-Powered Pair Programming
+            </h3>
+            <p>
+              Get guided assistance as if you're working with a real programming
+              partner.
             </p>
           </div>
-        </div>
-        <div class="testimonial">
-          <div
-            class="speech-bubble"
-            style="
-              background-color: #f0f0f0;
-              border-radius: 10px;
-              padding: 20px;
-              margin: 10px;
-              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            "
-          >
-            <p style="font-size: 16px; color: #333; margin-bottom: 10px">
-              "The Socratic method approach really helps me understand the
-              problems deeply. Highly recommended!"
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-blue-600">
+              Socratic Method Approach
+            </h3>
+            <p>
+              Learn through guided questions that lead you to the solution
+              step-by-step.
             </p>
-            <p style="font-size: 14px; color: #666; font-style: italic">
-              - CT, Software Engineer, Datadog
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-blue-600">
+              Seamless Leetcode Integration
+            </h3>
+            <p>
+              Works right within your Leetcode environment for a smooth coding
+              experience.
+            </p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-bold text-blue-600">
+              Customizable Assistance Level
+            </h3>
+            <p>
+              Adjust the level of guidance based on your preferences and skill
+              level.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="features">
-      <div class="container">
-        <h2>Features</h2>
-        <div class="feature">
-          <h3>AI-Powered Pair Programming</h3>
-          <p>
-            Get guided assistance as if you're working with a real programming
-            partner.
-          </p>
-        </div>
-        <div class="feature">
-          <h3>Socratic Method Approach</h3>
-          <p>
-            Learn through guided questions that lead you to the solution
-            step-by-step.
-          </p>
-        </div>
-        <div class="feature">
-          <h3>Seamless Leetcode Integration</h3>
-          <p>
-            Works right within your Leetcode environment for a smooth coding
-            experience.
-          </p>
-        </div>
-        <div class="feature">
-          <h3>Customizable Assistance Level</h3>
-          <p>
-            Adjust the level of guidance based on your preferences and skill
-            level.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="container">
-        <h2>Ready to Elevate Your Leetcode Experience?</h2>
-        <p>
+    <section class="py-10">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-semibold mb-4">
+          Ready to Elevate Your Leetcode Experience?
+        </h2>
+        <p class="mb-4">
           Install Leetcode Buddy now and start solving problems more
           effectively!
         </p>
-        <button class="cta-button">Get Leetcode Buddy</button>
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Get Leetcode Buddy
+        </button>
       </div>
     </section>
 
-    <footer>
-      <div class="container">
+    <footer class="bg-gray-800 text-white text-center py-4">
+      <div class="container mx-auto px-4">
         <p>&copy; 2024 Leetcode Buddy. All rights reserved.</p>
         <p>
-          <a href="./privacy.html">Privacy Policy</a> |
-          <a href="mailto:arctangent20@yahoo.com">Contact Us</a>
+          <a href="./privacy.html" class="text-blue-400">Privacy Policy</a> |
+          <a href="mailto:arctangent20@yahoo.com" class="text-blue-400"
+            >Contact Us</a
+          >
         </p>
       </div>
     </footer>
