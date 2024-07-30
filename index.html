@@ -4,14 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Leetcode Buddy - Your AI Pair Programming Assistant</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .marquee {
         display: flex;
         animation: marquee 10s linear infinite;
+      }
+
+      .marquee img {
+        padding: 0 20px;
       }
 
       @keyframes marquee {
@@ -26,25 +27,25 @@
   </head>
   <body class="bg-gray-100 text-gray-800">
     <header class="bg-blue-600 text-white text-center py-10">
-      <div class="container mx-auto px-4">
+      <div class="container mx-auto px-4 mt-10">
         <h1 class="text-5xl font-bold">Leetcode Buddy</h1>
-        <h2 class="text-2xl italic mt-2">
+        <h2 class="text-2xl italic mt-4">
           Your AI Pair Programming Assistant for Leetcode
         </h2>
         <img
           src="./screenshot.png"
           alt="Leetcode Buddy Screenshot"
-          class="max-w-full h-auto my-4"
+          class="max-w-full h-auto my-4 mt-10"
         />
         <button
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          class="bg-orange-300 hover:bg-blue-700 text-white font-bold py-4 px-4 rounded"
         >
           Get Leetcode Buddy
         </button>
       </div>
     </header>
 
-    <div class="overflow-hidden whitespace-nowrap bg-gray-200 py-4">
+    <div class="overflow-hidden whitespace-nowrap bg-white py-8">
       <div class="flex space-x-8 animate-marquee marquee">
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
@@ -72,37 +73,32 @@
           class="h-12"
         />
         <img
-          src="https://en.m.wikipedia.org/w/index.php?title=LinkedIn&diffonly=true#/media/File%3ALinkedIn_2021.svgg"
+          src="https://upload.wikimedia.org/wikipedia/commons/a/aa/LinkedIn_2021.svg"
           alt="LinkedIn"
           class="h-12"
         />
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Robinhood_logo.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/d/da/Robinhood_%28company%29_logo.svg"
           alt="Robinhood"
           class="h-12"
         />
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/5/53/Salesforce_logo.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg"
           alt="Salesforce"
           class="h-12"
         />
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Spotify_logo.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/9/99/Black_Spotify_logo_with_text.svg"
           alt="Spotify"
           class="h-12"
         />
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Square_Inc._logo.svg"
-          alt="Square"
-          class="h-12"
-        />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Stripe_Logo.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
           alt="Stripe"
           class="h-12"
         />
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/7/75/Twitch_logo.svg"
+          src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Twitch_logo_2019.svg"
           alt="Twitch"
           class="h-12"
         />
@@ -217,9 +213,11 @@
       const speed = 30;
 
       function scroll() {
-        marquee.scrollLeft += step;
-        if (marquee.scrollLeft >= marquee.scrollWidth / 2) {
-          marquee.scrollLeft = 0;
+        scrollAmount += step;
+        marquee.style.transform = `translateX(-${scrollAmount}px)`;
+
+        if (scrollAmount >= marquee.scrollWidth / 2) {
+          scrollAmount = 0; // Reset scroll amount to create a wrap effect
         }
         window.requestAnimationFrame(scroll);
       }
